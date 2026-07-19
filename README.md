@@ -70,19 +70,6 @@ hc_v5_stats.json
 
 ---
 
-# 📷 Screenshots
-
-Add screenshots here after uploading them.
-
-Example:
-
-* Main Menu
-* Match Screen
-* Hall Of Fame
-* Achievement Unlocks
-
----
-
 # 🚀 Installation
 
 ## Option 1 – Run the EXE
