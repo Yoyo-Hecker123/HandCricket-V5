@@ -69,6 +69,30 @@ hc_v5_stats.json
 ```
 
 ---
+# 🔥 Update 1 (v5.1)
+
+## ✨ New Features
+
+### 🏆 Improved Hall of Fame
+- Added detailed badge descriptions
+- Players can now understand what each achievement requires
+- Improved achievement tracking display
+
+### 🥇 Badge System Improvements
+- Added clearer explanations for achievements
+- Better progression tracking
+- Updated achievement presentation
+
+### 📦 Game Build Update
+- Released a new EXE build
+- Updated `HandCricket_Ultimate_v4.exe`
+- Improved release package
+
+## 🐛 Fixes
+- Fixed Hall of Fame display issues
+- Improved badge visibility
+- Minor UI improvements
+_ _ _
 
 # 🚀 Installation
 
