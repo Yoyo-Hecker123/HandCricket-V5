@@ -962,23 +962,23 @@ Target:
 
         # Bronze
 
-        "🥉 First Match":
+        "🥉 First Match - Play your 1st Game":
             self.stats["matches"]>=1,
 
 
-        "🥉 First Win":
+        "🥉 First Win - Get Your First Win":
             self.stats["wins"]>=1,
 
 
-        "🥉 Fifty Club":
+        "🥉 Fifty Club - Score a 50 ":
             self.stats["highest"]>=50,
 
 
-        "🥉 Survivor":
+        "🥉 Survivor - Play 10 Matches":
             self.stats["matches"]>=10,
 
 
-        "🥉 Five Matches":
+        "🥉 Five Matches - Play 5 Matches":
             self.stats["matches"]>=5,
 
 
@@ -986,23 +986,23 @@ Target:
         # Silver
 
 
-        "🥈 Century Hero":
+        "🥈 Century Hero - Score a Century":
             self.stats["highest"]>=100,
 
 
-        "🥈 Double Century":
+        "🥈 Double Century - Score a Double Century":
             self.stats["highest"]>=200,
 
 
-        "🥈 Five Wins":
+        "🥈 Five Wins - Get 5 Wins":
             self.stats["wins"]>=5,
 
 
-        "🥈 Chase Master":
+        "🥈 Chase Master - Complete a 150+ Chase":
             self.stats["biggest_chase"]>=150,
 
 
-        "🥈 Dominator":
+        "🥈 Dominator - Get a 100+ Win":
             self.stats["biggest_win"]>=100,
 
 
@@ -1010,23 +1010,23 @@ Target:
         # Gold
 
 
-        "🥇 250 Club":
+        "🥇 250 Club - Score 250+ Runs":
             self.stats["highest"]>=250,
 
 
-        "🥇 300 Club":
+        "🥇 300 Club - Score 300+ Runs":
             self.stats["highest"]>=300,
 
 
-        "🥇 Strike Monster":
+        "🥇 Strike Monster - Achieve a 500+ Strike Rate":
             self.stats["highest_sr"]>=500,
 
 
-        "🥇 Legendary Slayer":
+        "🥇 Legendary Slayer - Get 15+ Wins":
             self.stats["wins"]>=15,
 
 
-        "🥇 Ten Wins":
+        "🥇 Ten Wins - Get 10 Wins":
             self.stats["wins"]>=10,
 
 
@@ -1034,15 +1034,15 @@ Target:
         # Diamond
 
 
-        "💎 400 Club":
+        "💎 400 Club - Score 400+ Runs":
             self.stats["highest"]>=400,
 
 
-        "💎 25 Wins":
+        "💎 25 Wins - Get 25 Wins":
             self.stats["wins"]>=25,
 
 
-        "💎 50 Matches":
+        "💎 50 Matches - Play 50 Matches":
             self.stats["matches"]>=50,
 
 
