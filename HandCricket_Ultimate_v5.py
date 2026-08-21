@@ -817,7 +817,7 @@ Biggest Chase  : {self.stats['biggest_chase']}
         else:
 
 
-            if self.player_score >= self.target:
+            if self.player_score >= self.target: # type: ignore
 
                 win=True
 
@@ -1053,13 +1053,13 @@ Target:
         # Mythic
 
 
-        "👑 ODI WORLD RECORD":
+        "👑 ODI WORLD RECORD - Score a Grand total of 498 ":
             self.stats["highest"]>=498
 
         }
         unlocked = sum(badges.values())
 
-        badges["💎 Hall Of Legend"] = unlocked >= 15
+        badges["💎 Hall Of Legend: Unlock a total of 15 Badges"] = unlocked >= 15
 
         return badges
 
