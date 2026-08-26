@@ -5,17 +5,9 @@ import random
 import json
 import os
 from collections import Counter
-
-
-
-
 SAVE = "hc_v5_stats.json"
-
-
 class Game:
-
     def __init__(self, root):
-
         self.root = root
         self.root.title("🏏 Hand Cricket Legends v5")
         self.root.geometry("1100x750")
@@ -23,21 +15,15 @@ class Game:
 
         self.load_stats()
         self.menu()
-
-
     # ==========================
     # SAVE SYSTEM
     # ==========================
-
     def load_stats(self):
-
         if os.path.exists(SAVE):
 
             with open(SAVE, "r") as f:
                 self.stats = json.load(f)
-
         else:
-
             self.stats = {
                 "matches": 0,
                 "wins": 0,
@@ -955,118 +941,90 @@ Target:
     # BADGE SYSTEM
     # ==========================
 
+        # ==========================
+    # BADGE SYSTEM
+    # ==========================
+
     def check_badges(self):
 
+        badges = {
 
-        badges={
+            # Bronze
+            "🥉 First Match - Play your 1st Game":
+                self.stats["matches"] >= 1,
 
-        # Bronze
+            "🥉 First Win - Get Your First Win":
+                self.stats["wins"] >= 1,
 
-        "🥉 First Match - Play your 1st Game":
-            self.stats["matches"]>=1,
+            "🥉 Fifty Club - Score a 50":
+                self.stats["highest"] >= 50,
 
+            "🥉 Five Matches - Play 5 Matches":
+                self.stats["matches"] >= 5,
 
-        "🥉 First Win - Get Your First Win":
-            self.stats["wins"]>=1,
-
-
-        "🥉 Fifty Club - Score a 50 ":
-            self.stats["highest"]>=50,
-
-
-        "🥉 Survivor - Play 10 Matches":
-            self.stats["matches"]>=10,
+            "🥉 Survivor - Play 10 Matches":
+                self.stats["matches"] >= 10,
 
 
-        "🥉 Five Matches - Play 5 Matches":
-            self.stats["matches"]>=5,
+            # Silver
+            "🥈 Century Hero - Score a Century":
+                self.stats["highest"] >= 100,
+
+            "🥈 Double Century - Score a Double Century":
+                self.stats["highest"] >= 200,
+
+            "🥈 Five Wins - Get 5 Wins":
+                self.stats["wins"] >= 5,
+
+            "🥈 Chase Master - Complete a 150+ Chase":
+                self.stats["biggest_chase"] >= 150,
+
+            "🥈 Dominator - Get a 100+ Win":
+                self.stats["biggest_win"] >= 100,
 
 
+            # Gold
+            "🥇 250 Club - Score 250+ Runs":
+                self.stats["highest"] >= 250,
 
-        # Silver
+            "🥇 300 Club - Score 300+ Runs":
+                self.stats["highest"] >= 300,
 
+            "🥇 Strike Monster - Achieve a 500+ Strike Rate":
+                self.stats["highest_sr"] >= 500,
 
-        "🥈 Century Hero - Score a Century":
-            self.stats["highest"]>=100,
+            "🥇 Legendary Slayer - Get 15+ Wins":
+                self.stats["wins"] >= 15,
 
-
-        "🥈 Double Century - Score a Double Century":
-            self.stats["highest"]>=200,
-
-
-        "🥈 Five Wins - Get 5 Wins":
-            self.stats["wins"]>=5,
-
-
-        "🥈 Chase Master - Complete a 150+ Chase":
-            self.stats["biggest_chase"]>=150,
+            "🥇 Ten Wins - Get 10 Wins":
+                self.stats["wins"] >= 10,
 
 
-        "🥈 Dominator - Get a 100+ Win":
-            self.stats["biggest_win"]>=100,
+            # Diamond
+            "💎 400 Club - Score 400+ Runs":
+                self.stats["highest"] >= 400,
+
+            "💎 25 Wins - Get 25 Wins":
+                self.stats["wins"] >= 25,
+
+            "💎 50 Matches - Play 50 Matches":
+                self.stats["matches"] >= 50,
 
 
-
-        # Gold
-
-
-        "🥇 250 Club - Score 250+ Runs":
-            self.stats["highest"]>=250,
-
-
-        "🥇 300 Club - Score 300+ Runs":
-            self.stats["highest"]>=300,
-
-
-        "🥇 Strike Monster - Achieve a 500+ Strike Rate":
-            self.stats["highest_sr"]>=500,
-
-
-        "🥇 Legendary Slayer - Get 15+ Wins":
-            self.stats["wins"]>=15,
-
-
-        "🥇 Ten Wins - Get 10 Wins":
-            self.stats["wins"]>=10,
-
-
-
-        # Diamond
-
-
-        "💎 400 Club - Score 400+ Runs":
-            self.stats["highest"]>=400,
-
-
-        "💎 25 Wins - Get 25 Wins":
-            self.stats["wins"]>=25,
-
-
-        "💎 50 Matches - Play 50 Matches":
-            self.stats["matches"]>=50,
-
-
-        
-
-
-
-        # Mythic
-
-
-        "👑 ODI WORLD RECORD - Score a Grand total of 498 ":
-            self.stats["highest"]>=498
-
+            # Mythic
+            "👑 ODI WORLD RECORD - Score 498":
+                self.stats["highest"] >= 498
         }
+
+        # Hall of Legend
         unlocked = sum(badges.values())
 
-        badges["💎 Hall Of Legend: Unlock a total of 15 Badges"] = unlocked >= 15
+        badges["💎 Hall Of Legend - Unlock 15 Badges"] = (
+            unlocked >= 15
+        )
 
         return badges
-
-
-
-root=tk.Tk()
-
-Game(root)
-
-root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    game = Game(root)
+    root.mainloop()
