@@ -92,6 +92,80 @@ Team career statistics include:
 - Highest Score
 - Total Runs
 - Team Rating
+# 🆕 Update 5.2 – Team XP Progression System
+
+Version 5.2 completely redesigns team progression by introducing a dedicated XP-based growth system.
+
+Instead of earning stars directly from wins, teams now earn XP and gradually level up through different club tiers.
+
+## ✨ XP System
+
+### 🏆 Match Wins
+
+Winning a match awards:
+
+* +5 Team XP
+
+Every victory contributes towards your team's long-term development.
+
+### ⚔️ Challenge Rewards
+
+Team Challenges now grant XP rewards based on their difficulty tier:
+
+| Tier               | XP Reward |
+| ------------------ | --------- |
+| 🌱 New Club        | +2 XP     |
+| 🥉 Developing Club | +3 XP     |
+| 🥈 Rising Club     | +4 XP     |
+| 🥇 Strong Club     | +5 XP     |
+| 💎 Elite Club      | +7 XP     |
+| 👑 Legendary Club  | +10 XP    |
+
+## ⭐ Club Progression Tiers
+
+Teams evolve through six club levels:
+
+| XP Required | Club Status        |
+| ----------- | ------------------ |
+| 0 XP        | 🌱 New Club        |
+| 25 XP       | 🥉 Developing Club |
+| 60 XP       | 🥈 Rising Club     |
+| 110 XP      | 🥇 Strong Club     |
+| 175 XP      | 💎 Elite Club      |
+| 250 XP      | 👑 Legendary Club  |
+
+## 📈 Dynamic Team Ratings
+
+Team ratings are now calculated entirely from XP.
+
+As XP increases, teams gain stars and unlock higher club statuses.
+
+* XP determines Rating
+* Rating determines Club Status
+* Challenges help accelerate progression
+* Maximum Rating: ⭐⭐⭐⭐⭐ (5.0)
+
+## 🏏 Improved Challenge Screen
+
+The Team Challenge screen now displays:
+
+* Current Team XP
+* Current Club Status
+* Team Rating
+* Next Tier Progress
+* XP Required for Promotion
+* Challenge XP Rewards
+
+This makes progression easier to track and gives every challenge meaningful rewards.
+
+## 🎯 Goal
+
+Take every franchise from:
+
+🌱 New Club → 👑 Legendary Club
+
+and build the ultimate Hand Cricket dynasty.
+
 
 ## 💾 Save System
 
