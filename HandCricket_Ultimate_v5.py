@@ -1030,7 +1030,7 @@ Progress       : 100%
         self.history = []
 
         self.commentary = []
-
+        self.rapid_fire_achieved = False
         self.clear()
 
         # ========================================================
@@ -1225,9 +1225,13 @@ Progress       : 100%
                 runs = num
 
                 self.player_score += runs
+                
+                if (self.player_score >= 75 and self.player_balls <= 15 and not self.rapid_fire_achieved):
+
+                    self.rapid_fire_achieved = True
 
                 if runs == 6:
-                    msg = "🔥 HUGE SIX!"
+                        msg = "🔥 HUGE SIX!"
 
                 elif runs >= 4:
                     msg = "⚡ Boundary!"
