@@ -110,7 +110,7 @@ class Game:
 
         self.root = root
 
-        self.root.title("🏏 Hand Cricket Legends v5.1")
+        self.root.title("🏏 Hand Cricket Legends v5.2")
         self.root.geometry("1100x750")
         self.root.configure(bg="#222222")
 
@@ -375,7 +375,7 @@ class Game:
 
         tk.Label(
             self.root,
-            text="🏏 HAND CRICKET LEGENDS v5.1",
+            text="🏏 HAND CRICKET LEGENDS v5.2",
             font=("Arial", 26, "bold"),
             bg="#222222",
             fg="gold"
@@ -482,27 +482,7 @@ class Game:
             command=self.reset_team_data
         ).pack(pady=5)
 
-        # ========================================================
-        # GENERAL CAREER STATS
-        # ========================================================
-
-        lowest = self.stats["lowest"]
-
-        if lowest is None:
-            lowest = 0
-
-        tk.Label(
-            self.root,
-            text=(
-                f"\nMatches : {self.stats['matches']}"
-                f"\nWins : {self.stats['wins']}"
-                f"\nHighest : {self.stats['highest']}"
-                f"\nLowest : {lowest}"
-            ),
-            bg="#222222",
-            fg="white",
-            font=("Arial", 13)
-        ).pack(pady=20)
+        
     def get_challenge_xp(self, challenge_name):
 
         for tier_name, challenges in self.TEAM_CHALLENGES.items():
