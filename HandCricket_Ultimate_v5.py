@@ -1031,6 +1031,9 @@ Progress       : 100%
 
         self.commentary = []
         self.rapid_fire_achieved = False
+        self.blitzkrieg_achieved = False
+        self.perfect_blitz_achieved = False
+        self.lightning_300_achieved = False
         self.clear()
 
         # ========================================================
@@ -1226,9 +1229,18 @@ Progress       : 100%
 
                 self.player_score += runs
                 
+                
                 if (self.player_score >= 75 and self.player_balls <= 15 and not self.rapid_fire_achieved):
 
                     self.rapid_fire_achieved = True
+                if self.player_score >= 150 and self.player_balls <= 20:
+                    self.blitzkrieg_achieved = True
+
+                if self.player_score >= 200 and self.player_balls <= 15:
+                    self.perfect_blitz_achieved = True
+
+                if self.player_score >= 300 and self.player_balls <= 30:
+                    self.lightning_300_achieved = True
 
                 if runs == 6:
                         msg = "🔥 HUGE SIX!"
@@ -1946,25 +1958,25 @@ Target:
         # These MUST be achieved in current innings.
         # ========================================================
 
-        if score >= 75 and balls <= 15:
+        if self.rapid_fire_achieved:
 
             completed.add(
                 "⚡ Rapid Fire"
             )
 
-        if score >= 150 and balls <= 20:
+        if self.blitzkrieg_achieved:
 
             completed.add(
                 "⚡ Blitzkrieg"
             )
 
-        if score >= 200 and balls <= 15:
+        if self.perfect_blitz_achieved:
 
             completed.add(
                 "⚡ Perfect Blitz"
             )
 
-        if score >= 300 and balls <= 30:
+        if self.lightning_300_achieved:
 
             completed.add(
                 "⚡ Lightning 300"
@@ -2526,69 +2538,49 @@ Target:
                     )
 
                     if completed:
-
                         box.insert(
                             "end",
                             f"🟢 {challenge_name}\n",
                             "completed"
                         )
-
                     else:
-
                         box.insert(
                             "end",
                             f"🔴 {challenge_name}\n",
                             "locked"
                         )
-
                     box.insert(
                         "end",
                         f"   └─ {requirement}\n",
                         "requirement"
                     )
-
             box.config(
                 state="disabled"
             )
-
             box.yview_moveto(0)
-
         # ========================================================
         # TEAM CHANGED
         # ========================================================
-
         def team_changed(event=None):
-
             selected = challenge_team.get()
-
             if selected:
-
                 display_challenges(
                     selected
                 )
-
         challenge_team.bind(
             "<<ComboboxSelected>>",
             team_changed
         )
-
         # ========================================================
         # INITIAL DISPLAY
         # ========================================================
-
         display_challenges(
             current_team
         )
-
-
 # ================================================================
 # RUN GAME
 # ================================================================
-
 if __name__ == "__main__":
-
     root = tk.Tk()
-
     game = Game(root)
-
     root.mainloop()
